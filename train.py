@@ -86,11 +86,11 @@ def train(sentence):
     predicted = clf_svm.predict(X_test_tfidf)
     print("SVM: ", np.mean(predicted == test_y))
 
-    print()
-    print("Examples: ")
-    print("Input\t   Predicted\t  Correct")
-    for i in range(10):
-        print("%s\t=> %s\t: %s" % (test_X[i], predicted[i], test_y[i]))
+    #print()
+    #print("Examples: ")
+    #print("Input\t   Predicted\t  Correct")
+    #for i in range(10):
+    #    print("%s\t=> %s\t: %s" % (test_X[i], predicted[i], test_y[i]))
 
     # model save
     # first, delete old model
