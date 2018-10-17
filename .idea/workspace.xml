@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66a1b835-5f60-4800-b303-1e59b8bab23a" name="Default" comment="training module added (train.py)">
-      <change afterPath="$PROJECT_DIR$/corpus/Control_Engine_Start_Min.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/decode.py" afterDir="false" />
+    <list default="true" id="66a1b835-5f60-4800-b303-1e59b8bab23a" name="Default" comment="sklearn training successed (train.py)&#10;svm accuracy 98.1 %">
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corpus/No.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corpus/Yes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus/Engine_Start_Min.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/decode.py" beforeDir="false" afterPath="$PROJECT_DIR$/decode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,26 +29,26 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="3" />
+          <entry key="Python" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="49" />
-          <entry key="Python" value="8274" />
+          <entry key="PLAIN_TEXT" value="101" />
+          <entry key="Python" value="9470" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="5" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="8274" />
-          <entry key="txt" value="49" />
+          <entry key="py" value="9470" />
+          <entry key="txt" value="101" />
         </counts>
       </usages-collector>
     </session>
@@ -57,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/corpus2raw.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="192">
               <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
               <folding>
                 <element signature="e#24#49#0" expanded="true" />
@@ -68,13 +69,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+              <folding>
+                <element signature="e#24#48#0" expanded="true" />
+                <marker date="1539749832730" expanded="true" signature="162:167" ph="..." />
+                <marker date="1539749832730" expanded="true" signature="345:372" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1040">
-              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="192">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
-                <marker date="1539736809655" expanded="true" signature="2335:2336" ph="..." />
+                <marker date="1539749369853" expanded="true" signature="2489:2490" ph="..." />
               </folding>
             </state>
           </provider>
@@ -83,12 +98,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/decode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="496">
+              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
               <folding>
-                <marker date="1539655846048" expanded="true" signature="255:267" ph="..." />
-                <marker date="1539655846048" expanded="true" signature="392:397" ph="..." />
-                <marker date="1539655846048" expanded="true" signature="392:490" ph="..." />
+                <element signature="e#24#37#0" expanded="true" />
+                <marker date="1539749157146" expanded="true" signature="221:223" ph="..." />
+                <marker date="1539749157146" expanded="true" signature="670:688" ph="..." />
               </folding>
             </state>
           </provider>
@@ -121,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/corpus/Door_Close.txt" />
         <option value="$PROJECT_DIR$/corpus/Light_On.txt" />
         <option value="$PROJECT_DIR$/corpus/Horn_On.txt" />
         <option value="$PROJECT_DIR$/corpus/Charge_On.txt" />
@@ -169,15 +183,16 @@
         <option value="$PROJECT_DIR$/corpus/SmallTalk_Emoticon.txt" />
         <option value="$PROJECT_DIR$/corpus/SmallTalk_Fword.txt" />
         <option value="$PROJECT_DIR$/corpus2raw.py" />
-        <option value="$PROJECT_DIR$/decode.py" />
         <option value="$PROJECT_DIR$/word2vec.py" />
+        <option value="$PROJECT_DIR$/decode.py" />
         <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="728" />
-    <option name="y" value="92" />
+    <option name="x" value="404" />
+    <option name="y" value="-842" />
     <option name="width" value="1050" />
     <option name="height" value="613" />
   </component>
@@ -193,11 +208,6 @@
             <path>
               <item name="hmcLM" type="b2602c69:ProjectViewProjectNode" />
               <item name="hmcLM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hmcLM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hmcLM" type="462c0819:PsiDirectoryNode" />
-              <item name="corpus" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -226,7 +236,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.train">
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hmcLM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="corpus2raw" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hmcLM" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -294,11 +325,13 @@
       <item itemvalue="Python.corpus2raw" />
       <item itemvalue="Python.train" />
       <item itemvalue="Python.decode" />
+      <item itemvalue="Python.app" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.train" />
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.decode" />
+        <item itemvalue="Python.train" />
         <item itemvalue="Python.corpus2raw" />
       </list>
     </recent_temporary>
@@ -321,26 +354,34 @@
       <option name="project" value="LOCAL" />
       <updated>1539652154143</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sklearn training successed (train.py)&#10;svm accuracy 98.1 %">
+      <created>1539737577078</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539737577078</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-1088" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21331316" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15031983" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49733475" visible="true" weight="0.49753696" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995657" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4968017" visible="true" weight="0.22801302" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39901477" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32899022" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5026652" side_tool="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32840723" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50319827" side_tool="true" weight="0.22801302" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -353,7 +394,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="training module added (train.py)" />
-    <option name="LAST_COMMIT_MESSAGE" value="training module added (train.py)" />
+    <MESSAGE value="sklearn training successed (train.py)&#10;svm accuracy 98.1 %" />
+    <option name="LAST_COMMIT_MESSAGE" value="sklearn training successed (train.py)&#10;svm accuracy 98.1 %" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -372,20 +414,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/corpus/Control_Charge_Start.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corpus/Control_Charge_Stop.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="134" column="11" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/corpus/Control_Engine_Start_Max.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2576">
@@ -692,9 +720,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/word2vec.py" />
+    <entry file="file://C:/Anaconda3/Lib/site-packages/sklearn/linear_model/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="304" selection-start-line="304" selection-end-line="304" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/decode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+            <marker date="1539749157146" expanded="true" signature="221:223" ph="..." />
+            <marker date="1539749157146" expanded="true" signature="670:688" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/corpus2raw.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="192">
           <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
           <folding>
             <element signature="e#24#49#0" expanded="true" />
@@ -703,25 +750,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/decode.py">
+    <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state relative-caret-position="192">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
           <folding>
-            <marker date="1539655846048" expanded="true" signature="255:267" ph="..." />
-            <marker date="1539655846048" expanded="true" signature="392:397" ph="..." />
-            <marker date="1539655846048" expanded="true" signature="392:490" ph="..." />
+            <element signature="e#24#33#0" expanded="true" />
+            <marker date="1539749369853" expanded="true" signature="2489:2490" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train.py">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="240">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding>
-            <element signature="e#24#33#0" expanded="true" />
-            <marker date="1539736809655" expanded="true" signature="2335:2336" ph="..." />
+            <element signature="e#24#48#0" expanded="true" />
+            <marker date="1539749832730" expanded="true" signature="162:167" ph="..." />
+            <marker date="1539749832730" expanded="true" signature="345:372" ph="..." />
           </folding>
         </state>
       </provider>

@@ -3,12 +3,13 @@
 import os
 import numpy as np
 import random
-from eunjeon import Mecab
+import sys
+import argparse
+import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import SGDClassifier
-from sklearn.pipeline import Pipeline
 
 
 def make_data(path, testprob):
@@ -16,10 +17,6 @@ def make_data(path, testprob):
 
     # Get corpus file list
     corpuslist_abs = os.listdir(path)
-
-    # We need Morpheme analyzer
-    # We will use mecab
-    mecab = Mecab()
 
     template = []
 
@@ -58,12 +55,12 @@ def make_data(path, testprob):
 
 
 def train():
-    train_X, train_y, test_X, test_y = make_data('C:/MyProject/hmcLM/corpus', testprob=0.1)
+    train_X, train_y, test_X, test_y = make_data('corpus', testprob=0.1)
     print(len(train_X), len(train_y))
 
     count_vect = CountVectorizer()
     X_train_counts = count_vect.fit_transform(train_X)
-    # X_train_counts.shape
+    print("The number of features: {}".format(X_train_counts.shape[1]))
 
     tfidf_transformer = TfidfTransformer()
     X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
@@ -85,6 +82,11 @@ def train():
     predicted = clf_svm.predict(X_test_tfidf)
     print("SVM: ", np.mean(predicted == test_y))
 
+    # model save
+    with open('model/hmc.model', 'wb') as f:
+        pickle.dump(clf_svm, f)
+    print('SVM classifier model saved at "model/hmc.model"')
+    print('If you want to load the model, use "pickle.load" in python.')
 
 if __name__ == '__main__':
     train();

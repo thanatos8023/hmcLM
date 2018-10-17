@@ -1,37 +1,34 @@
 # -*- coding:utf-8 -*-
 
-import dill
-import os
-from corpus2raw import pos2word
-from eunjeon import Mecab
-import nltk
-from nltk import trigrams, bigrams
-from collections import Counter, defaultdict
+import pickle
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import HashingVectorizer
 
 
-def tri(tokens, model):
-    pass
-
-
-def bi(tokens, model):
-    pass
-
-
-def decode(sentence, model):
+def decode(sentence, model_path):
     # sentence: Input sentence
     # model: model path
 
-    # We need mecab
-    mecab = Mecab()
+    # sentence transform
+    hash_vect = HashingVectorizer(n_features=(698))
+    count_vect = CountVectorizer()
+    sent_counts = hash_vect.fit_transform([sentence])
+    #sent_counts = count_vect.fit_transform([sentence])
+    print(sent_counts.shape)
 
-    # Convert sentence to token
-    word_token = pos2word(mecab.pos(sentence))
+    tfidf_transformer = TfidfTransformer()
+    sent_tfidf = tfidf_transformer.fit_transform(sent_counts)
 
     # Load model
-    with open(model, 'rb') as f:
-        models = dill.load(f)
+    with open(model_path, 'rb') as f:
+        model = pickle.load(f)
         print("model loaded")
+
+    # get result
+    return model.predict(sent_tfidf)
 
 
 if __name__ == '__main__':
-    decode('내차 시동 켜볼래', 'model/hmc.model')
+    intention = decode('내차 시동 켜볼래', 'model/hmc.model')
+    print(intention)
