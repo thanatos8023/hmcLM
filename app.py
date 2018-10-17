@@ -2,7 +2,7 @@
 
 from flask import Flask
 from flask import request
-from decode import decode
+from train import train
 
 app = Flask(__name__)
 
@@ -14,8 +14,8 @@ def hello_world():
 def get_intention():
     sentence = request.args.get('sent')
     print(sentence)
-    intention = decode(sentence, 'model/hmc.model')
-    return intention[0]
+    intention = train(sentence)
+    return intention
 
 
 if __name__ == '__main__':
