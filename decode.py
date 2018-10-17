@@ -11,7 +11,7 @@ def decode(sentence, model_path):
     # model: model path
 
     # sentence transform
-    hash_vect = HashingVectorizer(n_features=(698))
+    hash_vect = HashingVectorizer(n_features=(697))
     count_vect = CountVectorizer()
     sent_counts = hash_vect.fit_transform([sentence])
     #sent_counts = count_vect.fit_transform([sentence])
