@@ -1,29 +1,30 @@
 # -*- coding:utf-8 -*-
 
 import os
-import pickle
-from corpus2raw import pos2word
-import glob
-from nltk import bigrams, trigrams
-from collections import Counter, defaultdict
+import numpy as np
+import random
 from eunjeon import Mecab
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.linear_model import SGDClassifier
+from sklearn.pipeline import Pipeline
 
 
-def train(corpus, *args):
-    # corpus: directory path of corpus
-    # *args
-    # ngrams = 3
-    # katz = true
+def make_data(path, testprob):
+    print('--- Making data')
 
     # Get corpus file list
-    corpuslist_abs = os.listdir(corpus)
+    corpuslist_abs = os.listdir(path)
 
     # We need Morpheme analyzer
     # We will use mecab
     mecab = Mecab()
 
-    # Models list
-    models = defaultdict(lambda: defaultdict(lambda: defaultdict))
+    template = []
+
+    X = []
+    y = []
 
     # make model corpus by corpus
     for cabs in corpuslist_abs:
@@ -38,41 +39,52 @@ def train(corpus, *args):
         # sentence2
         # ...
         ####################################
-        with open(cabs, 'r', encoding='utf-8') as f:
-            corpus = f.readlines()
+        with open(path + '/' + cabs, 'r', encoding='utf-8') as f:
+            raw = f.readlines()
 
-        # tokenize with tagged
-        word_tokens = list()
-        for sentence in corpus:
-            word_tokens.append(pos2word(mecab.pos(sentence)))
+        for sent in raw:
+            template.append((sent, corpusname))
 
-        # make model
-        # Laplace smoothing
-        model_tri = defaultdict(lambda: defaultdict(lambda: 0))
-        for tokens in word_tokens:
-            for w1, w2, w3 in trigrams(tokens, pad_left=True, pad_right=True):
-                model_tri[(w1, w2)][w3] += 1
-        for w1_w2 in model_tri:
-            total_count = float(sum(model_tri[w1_w2].values()))
-            for w3 in model_tri[w1_w2]:
-                model_tri[w1_w2][w3] /= total_count
+    random.shuffle(template)
 
-        model_bi = defaultdict(lambda: defaultdict(lambda: 0))
-        for tokens in word_tokens:
-            for w1, w2 in bigrams(tokens, pad_left=True, pad_right=True):
-                model_bi[w1][w2] += 1
-        for w1 in model_bi:
-            total_count = float(sum(model_bi[w1].values()))
-            for w2 in model_bi[w1]:
-                model_bi[w1][w2] /= total_count
+    for sent in template:
+        X.append(sent[0])
+        y.append(sent[1])
 
-        models[corpusname] = [model_tri, model_bi]
+    idx = int(len(X) - (len(X)*testprob))
+    train_X, train_y, test_X, test_y = X[:idx], y[:idx], X[idx:], y[idx:]
 
-    # save model
-    with open('model/hmc.model', 'wb') as f:
-        pickle.dump(models, f)
-        print('Successfully Model saved!')
+    return train_X, train_y, test_X, test_y
+
+
+def train():
+    train_X, train_y, test_X, test_y = make_data('C:/MyProject/hmcLM/corpus', testprob=0.1)
+    print(len(train_X), len(train_y))
+
+    count_vect = CountVectorizer()
+    X_train_counts = count_vect.fit_transform(train_X)
+    # X_train_counts.shape
+
+    tfidf_transformer = TfidfTransformer()
+    X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
+    print(X_train_tfidf.shape)
+
+    # Naive Beyesian
+    clf = MultinomialNB().fit(X_train_tfidf, train_y)
+
+    # SVM
+    clf_svm = SGDClassifier().fit(X_train_tfidf, train_y)
+
+    # Evaluation
+    X_test_counts = count_vect.transform(test_X)
+    X_test_tfidf = tfidf_transformer.transform(X_test_counts)
+
+    predicted = clf.predict(X_test_tfidf)
+    print("Naive Bayesian: ", np.mean(predicted == test_y))
+
+    predicted = clf_svm.predict(X_test_tfidf)
+    print("SVM: ", np.mean(predicted == test_y))
 
 
 if __name__ == '__main__':
-    train('corpus')
+    train();
