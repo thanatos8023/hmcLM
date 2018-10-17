@@ -13,6 +13,7 @@ def hello_world():
 @app.route('/decode')
 def get_intention():
     sentence = request.args.get('sent')
+    print(request.args)
     print(sentence)
     intention = train(sentence)
     return intention
