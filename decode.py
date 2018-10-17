@@ -11,7 +11,7 @@ def decode(sentence, model_path):
     # model: model path
 
     # sentence transform
-    hash_vect = HashingVectorizer(n_features=(698))
+    hash_vect = HashingVectorizer(n_features=(699))
     count_vect = CountVectorizer()
     sent_counts = hash_vect.fit_transform([sentence])
     #sent_counts = count_vect.fit_transform([sentence])
@@ -30,5 +30,5 @@ def decode(sentence, model_path):
 
 
 if __name__ == '__main__':
-    intention = decode('내차 시동 켜볼래', 'model/hmc.model')
+    intention = decode('안녕', 'model/hmc.model')
     print(intention)

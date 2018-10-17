@@ -48,13 +48,16 @@ def make_data(path, testprob):
         X.append(sent[0])
         y.append(sent[1])
 
+    #for i in range(10):
+    #    print('{}\t{}'.format(X[i], y[i]))
+
     idx = int(len(X) - (len(X)*testprob))
     train_X, train_y, test_X, test_y = X[:idx], y[:idx], X[idx:], y[idx:]
 
     return train_X, train_y, test_X, test_y
 
 
-def train():
+def train(sentence):
     train_X, train_y, test_X, test_y = make_data('corpus', testprob=0.1)
     print(len(train_X), len(train_y))
 
@@ -76,17 +79,35 @@ def train():
     X_test_counts = count_vect.transform(test_X)
     X_test_tfidf = tfidf_transformer.transform(X_test_counts)
 
+    print()
     predicted = clf.predict(X_test_tfidf)
     print("Naive Bayesian: ", np.mean(predicted == test_y))
 
     predicted = clf_svm.predict(X_test_tfidf)
     print("SVM: ", np.mean(predicted == test_y))
 
+    print()
+    print("Examples: ")
+    print("Input\t   Predicted\t  Correct")
+    for i in range(10):
+        print("%s\t=> %s\t: %s" % (test_X[i], predicted[i], test_y[i]))
+
     # model save
+    # first, delete old model
+    os.remove('model/hmc.model')
+    print()
     with open('model/hmc.model', 'wb') as f:
         pickle.dump(clf_svm, f)
     print('SVM classifier model saved at "model/hmc.model"')
     print('If you want to load the model, use "pickle.load" in python.')
 
+    sent_counts = count_vect.transform([sentence])
+    sent_tfidf = tfidf_transformer.transform(sent_counts)
+
+    pred = clf_svm.predict(sent_tfidf)
+
+    print()
+    return pred[0]
+
 if __name__ == '__main__':
-    train();
+    print(train("내 차 시동 켜 줘"))
