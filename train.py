@@ -12,9 +12,6 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import SGDClassifier
 
 
-count_vect = CountVectorizer()
-
-
 def make_data(path, testprob):
     print('--- Making data')
 
@@ -62,15 +59,15 @@ def make_data(path, testprob):
 
 def train():
     train_X, train_y, test_X, test_y = make_data('corpus', testprob=0.1)
-    print(len(train_X), len(train_y))
+    #print(len(train_X), len(train_y))
 
-    #count_vect = CountVectorizer()
+    count_vect = CountVectorizer()
     X_train_counts = count_vect.fit_transform(train_X)
-    print("The number of features: {}".format(X_train_counts.shape[1]))
+    #print("The number of features: {}".format(X_train_counts.shape[1]))
 
     tfidf_transformer = TfidfTransformer()
     X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
-    print(X_train_tfidf.shape)
+    #print(X_train_tfidf.shape)
 
     # Naive Beyesian
     clf = MultinomialNB().fit(X_train_tfidf, train_y)
@@ -82,12 +79,12 @@ def train():
     X_test_counts = count_vect.transform(test_X)
     X_test_tfidf = tfidf_transformer.transform(X_test_counts)
 
-    print()
+    #print()
     predicted = clf.predict(X_test_tfidf)
-    print("Naive Bayesian: ", np.mean(predicted == test_y))
+    #print("Naive Bayesian: ", np.mean(predicted == test_y))
 
     predicted = clf_svm.predict(X_test_tfidf)
-    print("SVM: ", np.mean(predicted == test_y))
+    #print("SVM: ", np.mean(predicted == test_y))
 
     #print()
     #print("Examples: ")
@@ -98,16 +95,29 @@ def train():
     # model save
     # first, delete old model
     os.remove('model/hmc.model')
-    print()
+    #print()
     with open('model/hmc.model', 'wb') as f:
         pickle.dump(clf_svm, f)
-    print('SVM classifier model saved at "model/hmc.model"')
-    print('If you want to load the model, use "pickle.load" in python.')
+    #print('SVM classifier model saved at "model/hmc.model"')
+    #print('If you want to load the model, use "pickle.load" in python.')
+
+    sentence = "시동 켜줘"
+
+    # vectorize
+    sent_counts = count_vect.transform([sentence])
+    sent_tfidf = tfidf_transformer.transform(sent_counts)
+
+    pred = clf.predict(sent_tfidf)
+
+    print(sentence)
+    print(pred)
 
 
 def decode(sentence):
     with open('model/hmc.model', 'rb') as f:
         model = pickle.load(f)
+
+    count_vect = CountVectorizer()
 
     # vectorize
     sent_counts = count_vect.transform([sentence])
