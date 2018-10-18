@@ -107,7 +107,7 @@ def train(sentence):
     sent_counts = count_vect.transform([sentence])
     sent_tfidf = tfidf_transformer.transform(sent_counts)
 
-    pred = clf.predict(sent_tfidf)
+    pred = clf_svm.predict(sent_tfidf)
 
     print(sentence)
     print(pred)
