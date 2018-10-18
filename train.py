@@ -57,7 +57,7 @@ def make_data(path, testprob):
     return train_X, train_y, test_X, test_y
 
 
-def train():
+def train(sentence):
     train_X, train_y, test_X, test_y = make_data('corpus', testprob=0.1)
     #print(len(train_X), len(train_y))
 
@@ -101,7 +101,7 @@ def train():
     #print('SVM classifier model saved at "model/hmc.model"')
     #print('If you want to load the model, use "pickle.load" in python.')
 
-    sentence = "시동 켜줘"
+    #sentence = "시동 켜줘"
 
     # vectorize
     sent_counts = count_vect.transform([sentence])
