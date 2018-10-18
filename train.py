@@ -12,6 +12,9 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import SGDClassifier
 
 
+count_vect = CountVectorizer()
+
+
 def make_data(path, testprob):
     print('--- Making data')
 
@@ -57,11 +60,11 @@ def make_data(path, testprob):
     return train_X, train_y, test_X, test_y
 
 
-def train(sentence):
+def train():
     train_X, train_y, test_X, test_y = make_data('corpus', testprob=0.1)
     print(len(train_X), len(train_y))
 
-    count_vect = CountVectorizer()
+    #count_vect = CountVectorizer()
     X_train_counts = count_vect.fit_transform(train_X)
     print("The number of features: {}".format(X_train_counts.shape[1]))
 
@@ -101,13 +104,21 @@ def train(sentence):
     print('SVM classifier model saved at "model/hmc.model"')
     print('If you want to load the model, use "pickle.load" in python.')
 
+
+def decode(sentence):
+    with open('model/hmc.model', 'rb') as f:
+        model = pickle.load(f)
+
+    # vectorize
     sent_counts = count_vect.transform([sentence])
+
+    tfidf_transformer = TfidfTransformer()
     sent_tfidf = tfidf_transformer.transform(sent_counts)
 
-    pred = clf_svm.predict(sent_tfidf)
+    pred = model.predict(sent_tfidf)
 
-    print()
-    return pred[0]
+    return model
+
 
 if __name__ == '__main__':
-    print(train("내 차 시동 켜 줘"))
+    train()

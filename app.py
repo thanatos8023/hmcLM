@@ -2,7 +2,7 @@
 
 from flask import Flask
 from flask import request
-from train import train
+from train import decode
 
 app = Flask(__name__)
 
@@ -13,9 +13,9 @@ def hello_world():
 @app.route('/decode')
 def get_intention():
     sentence = request.args.get('sent')
-    print(request.args)
-    print(sentence)
-    intention = train(sentence)
+    print("User utterance:", sentence)
+    intention = decode(sentence)
+    print("Output:", intention)
     return intention
 
 
