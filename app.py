@@ -2,7 +2,7 @@
 
 from flask import Flask
 from flask import request
-from train import decode
+from train import train
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ def hello_world():
 def get_intention():
     sentence = request.args.get('sent')
     print("User utterance:", sentence)
-    intention = decode(sentence)
+    intention = train(sentence)
     print("Output:", intention)
     return intention
 
