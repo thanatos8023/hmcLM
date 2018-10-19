@@ -14,7 +14,7 @@ def decode(sent):
     return intention
 
 
-@app.route('/decode', methods=['GET', 'POST'])
+@app.route('/decode')
 def get_intention():
     intend = decode(request.args.get('sent'))
     return intend
