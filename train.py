@@ -112,6 +112,8 @@ def train(sentence):
     print(sentence)
     print(pred)
 
+    return pred
+
 
 def decode(sentence):
     with open('model/hmc.model', 'rb') as f:

@@ -7,19 +7,16 @@ from train import train
 app = Flask(__name__)
 
 
-def decode(sent):
+@app.route('/decode')
+def get_intention():
+    sent = request.args.get('sent')
     print("User utterance:", sent)
     intention = train(sent)
     print("Output:", intention)
-    return intention
 
+    return intention[0]
 
-@app.route('/decode')
-def get_intention():
-    intend = decode(request.args.get('sent'))
-    res = Flask.make_response(rv=intend)
-    return res
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
