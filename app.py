@@ -17,7 +17,7 @@ def decode(sent):
 @app.route('/decode', methods=['GET', 'POST'])
 def get_intention():
     intend = decode(request.args.get('sent'))
-    return Response(intend)
+    return intend
 
 
 if __name__ == '__main__':
