@@ -131,4 +131,4 @@ def decode(sentence):
 
 
 if __name__ == '__main__':
-    train()
+    train("뭐래 병신이")

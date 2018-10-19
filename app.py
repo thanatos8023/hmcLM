@@ -1,22 +1,23 @@
 # -*- coding:utf-8 -*-
 
 from flask import Flask
-from flask import request
+from flask import request, Response
 from train import train
 
 app = Flask(__name__)
 
-@app.route('/test')
-def hello_world():
-    return "Hello, World!"
 
-@app.route('/decode')
-def get_intention():
-    sentence = request.args.get('sent')
-    print("User utterance:", sentence)
-    intention = train(sentence)
+def decode(sent):
+    print("User utterance:", sent)
+    intention = train(sent)
     print("Output:", intention)
     return intention
+
+
+@app.route('/decode', methods=['GET', 'POST'])
+def get_intention():
+    intend = decode(request.args.get('sent'))
+    return Response(intend)
 
 
 if __name__ == '__main__':
