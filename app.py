@@ -17,7 +17,7 @@ def decode(sent):
 @app.route('/decode')
 def get_intention():
     intend = decode(request.args.get('sent'))
-    res = Flask.make_response(intend)
+    res = Flask.make_response(rv=intend)
     return res
 
 
