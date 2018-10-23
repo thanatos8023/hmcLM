@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66a1b835-5f60-4800-b303-1e59b8bab23a" name="Default" comment="response">
+    <list default="true" id="66a1b835-5f60-4800-b303-1e59b8bab23a" name="Default" comment="return error fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Control_Charge_Start.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/Control_Charge_Start.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Control_Charge_Stop.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/Control_Charge_Stop.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Control_Check.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Control_Check.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Control_Engine_Start_Temp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/Control_Engine_Start_Temp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/FAQ_PWChange.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/FAQ_PWChange.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/FAQ_Paycheck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/FAQ_Paycheck.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Fail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/Fail.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Help_AirCon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/Help_AirCon.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Help_Can.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/Help_Can.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Help_Conservation.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Help_EngineOil.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/Help_EngineOil.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Help_HowToUse.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Help_OnlyQuestion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/Help_OnlyQuestion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Help_Repair.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/Help_Repair.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/No.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/SmallTalk_AgeRU.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/SmallTalk_AgeRU.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/SmallTalk_Bye.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/SmallTalk_Bye.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/SmallTalk_DoingWhat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/SmallTalk_DoingWhat.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/SmallTalk_Fun.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/SmallTalk_Fun.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/SmallTalk_Fword.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/SmallTalk_Fword.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/SmallTalk_Hello.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/SmallTalk_Hello.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/SmallTalk_LetsPlay.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/SmallTalk_LetsPlay.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/SmallTalk_RUThere.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/SmallTalk_RUThere.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/SmallTalk_Tired.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/SmallTalk_Tired.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/SmallTalk_WhoRU.txt" beforeDir="false" afterPath="$PROJECT_DIR$/corpus/SmallTalk_WhoRU.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus/Yes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/decode.py" beforeDir="false" afterPath="$PROJECT_DIR$/decode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lm.py" beforeDir="false" afterPath="$PROJECT_DIR$/lm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,38 +44,40 @@
     <session id="-1259492274">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.29" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="Python" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="443" />
-          <entry key="Python" value="12157" />
+          <entry key="PLAIN_TEXT" value="486" />
+          <entry key="Python" value="15819" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="py" value="6" />
-          <entry key="txt" value="2" />
+          <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="12157" />
-          <entry key="txt" value="443" />
+          <entry key="py" value="15819" />
+          <entry key="txt" value="486" />
         </counts>
       </usages-collector>
     </session>
@@ -66,13 +97,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state relative-caret-position="336">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
               <folding>
                 <element signature="e#24#47#0" expanded="true" />
+                <marker date="1540280314176" expanded="true" signature="120:122" ph="..." />
               </folding>
             </state>
           </provider>
@@ -81,22 +113,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1984">
-              <caret line="133" column="19" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
+            <state relative-caret-position="382">
+              <caret line="132" column="17" lean-forward="true" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
-                <marker date="1539906531670" expanded="true" signature="3096:3437" ph="..." />
-                <marker date="1539906531670" expanded="true" signature="3436:3437" ph="..." />
+                <marker date="1540280314163" expanded="true" signature="519:1557" ph="..." />
+                <marker date="1540280314163" expanded="true" signature="5117:6121" ph="..." />
+                <marker date="1540280314163" expanded="true" signature="6120:6121" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/corpus/Fail.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10416">
-              <caret line="651" column="2" selection-start-line="651" selection-start-column="2" selection-end-line="651" selection-end-column="2" />
+            <state relative-caret-position="368">
+              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -104,8 +137,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="394">
+              <caret line="35" selection-start-line="35" selection-end-line="40" selection-end-column="23" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -116,12 +149,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/decode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+            <state relative-caret-position="426">
+              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
-                <marker date="1539760546328" expanded="true" signature="221:223" ph="..." />
-                <marker date="1539760546328" expanded="true" signature="256:261" ph="..." />
               </folding>
             </state>
           </provider>
@@ -143,6 +174,7 @@
       <find>^\s+case [\'\&quot;]</find>
       <find>^ *$</find>
       <find>^$</find>
+      <find>shape</find>
     </findStrings>
     <replaceStrings>
       <replace>\1</replace>
@@ -200,19 +232,19 @@
         <option value="$PROJECT_DIR$/corpus/SmallTalk_Fword.txt" />
         <option value="$PROJECT_DIR$/corpus2raw.py" />
         <option value="$PROJECT_DIR$/word2vec.py" />
-        <option value="$PROJECT_DIR$/decode.py" />
         <option value="$PROJECT_DIR$/lm.py" />
-        <option value="$PROJECT_DIR$/corpus/Fail.txt" />
-        <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/decode.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/corpus/Fail.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="629" />
-    <option name="y" value="-910" />
-    <option name="width" value="1024" />
-    <option name="height" value="613" />
+    <option name="x" value="316" />
+    <option name="y" value="-1026" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -220,6 +252,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,7 +269,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,6 +276,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MyProject\hmcLM" />
       <recent name="C:\MyProject\hmcLM\corpus" />
     </key>
   </component>
@@ -461,19 +494,33 @@
       <option name="project" value="LOCAL" />
       <updated>1539917169064</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="response">
+      <created>1539917319381</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1539917319381</updated>
+    </task>
+    <task id="LOCAL-00015" summary="return error fixed">
+      <created>1539923115648</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1539923115648</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-1088" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15351813" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15724947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4968017" visible="true" weight="0.22801302" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49626866" visible="true" weight="0.3441911" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3984799" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -481,7 +528,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32681867" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50319827" side_tool="true" weight="0.22801302" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50373137" side_tool="true" weight="0.3441911" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -506,7 +553,8 @@
     <MESSAGE value="a" />
     <MESSAGE value="ba" />
     <MESSAGE value="response" />
-    <option name="LAST_COMMIT_MESSAGE" value="response" />
+    <MESSAGE value="return error fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="return error fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -518,7 +566,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/train.py</url>
-          <line>53</line>
+          <line>94</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
@@ -530,13 +578,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/corpus/SmallTalk_Hello.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/corpus/SmallTalk_Bye.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -840,29 +881,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train.py">
+    <entry file="file://$PROJECT_DIR$/vocab.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1984">
-          <caret line="133" column="19" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-            <marker date="1539906531670" expanded="true" signature="3096:3437" ph="..." />
-            <marker date="1539906531670" expanded="true" signature="3436:3437" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corpus/Fail.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10416">
-          <caret line="651" column="2" selection-start-line="651" selection-start-column="2" selection-end-line="651" selection-end-column="2" />
-        </state>
+        <state relative-caret-position="-3984" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="394">
+          <caret line="35" selection-start-line="35" selection-end-line="40" selection-end-column="23" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -871,23 +898,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/decode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        <state relative-caret-position="426">
+          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
-            <marker date="1539760546328" expanded="true" signature="221:223" ph="..." />
-            <marker date="1539760546328" expanded="true" signature="256:261" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="336">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
           <folding>
             <element signature="e#24#47#0" expanded="true" />
+            <marker date="1540280314176" expanded="true" signature="120:122" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="132" column="17" lean-forward="true" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+            <marker date="1540280314163" expanded="true" signature="519:1557" ph="..." />
+            <marker date="1540280314163" expanded="true" signature="5117:6121" ph="..." />
+            <marker date="1540280314163" expanded="true" signature="6120:6121" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corpus/Fail.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
         </state>
       </provider>
     </entry>
