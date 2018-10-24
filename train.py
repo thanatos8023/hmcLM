@@ -230,4 +230,4 @@ if __name__ == '__main__':
     #make_vocab('corpus', 'vocab.pickle')
     #train()
 
-    decode("시동 꺼줘")
+    decode("시동켜주세요")
