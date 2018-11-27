@@ -16,7 +16,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import SGDClassifier
 from eunjeon import Mecab
 from sklearn import metrics
-import MeCab
+#import MeCab
 
 
 def make_vocab(corpus_path, save_path):
