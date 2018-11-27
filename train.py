@@ -15,6 +15,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import SGDClassifier
 from eunjeon import Mecab
+from sklearn import metrics
+import MeCab
+
 
 def make_vocab(corpus_path, save_path):
     mecab = Mecab()
@@ -169,6 +172,71 @@ def train():
     print('If you want to load the model, use "pickle.load" in python.')
 
 
+def decode_in_server(sentence):
+    # define tokenizer
+    def tokenizer(sent):
+        mecab = MeCab.Tagger('-d /usr/local/lib/mecab/dic/mecab-ko-dic')
+        result = []
+
+        tags = mecab.parseToNode(sent)
+        while tags:
+            #output = '%s/%s' % (tags.surface, tags.feature.split(',')[0])
+            result.append(tags.surface)
+            tags = tags.next
+
+        return result
+
+    print('--- Get vocabulary')
+    try:
+        with open('vocab.pickle', 'rb') as f:
+            vocab = pickle.load(f)
+    except FileNotFoundError:
+        print('Loading vocabulary ERROR. There is no vocabulary.')
+        return None
+
+    print('--- Load vocavulary successfully')
+    print('%% Vocabulary size:', len(vocab))
+
+    try:
+        with open('model/hmc.model', 'rb') as f:
+            model = pickle.load(f)
+            print("--- Loading model Successfully")
+    except FileNotFoundError:
+        print("Loading model Failed. There is no model.")
+        return None
+
+    count_vect = CountVectorizer(
+        tokenizer=tokenizer,
+        ngram_range=(1, 3),
+        max_features=10000,
+        vocabulary=vocab)
+
+    tfidf_vect = TfidfVectorizer(
+        tokenizer=tokenizer,
+        ngram_range=(1, 3),
+        max_features=10000,
+        vocabulary=vocab
+    )
+
+    # vectorize
+    sent_counts = count_vect.transform([sentence])
+    # print(sent_counts.shape)
+
+    tfidf_transformer = TfidfTransformer(
+        use_idf=False,
+        smooth_idf=False,
+        norm='l2'
+    )
+    sent_tfidf = tfidf_transformer.transform(sent_counts)
+
+    pred = model.predict(sent_tfidf)
+
+    print('Input:', sentence)
+    print('Prediction:', pred)
+
+    return pred
+
+
 def decode(sentence):
     # tokenizer
     mecab = Mecab()
@@ -182,7 +250,7 @@ def decode(sentence):
         return None
 
     print('--- Load vocabulary successfully')
-    print('%% Vacabulary size:', len(vocab))
+    print('%% Vocabulary size:', len(vocab))
 
     try:
         with open('model/hmc.model', 'rb') as f:
@@ -230,4 +298,8 @@ if __name__ == '__main__':
     #make_vocab('corpus', 'vocab.pickle')
     #train()
 
+    # on local
     decode("시동켜주세요")
+
+    # on server
+    #decode_in_server("시동켜주세요")

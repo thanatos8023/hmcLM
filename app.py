@@ -11,11 +11,13 @@ app = Flask(__name__)
 def get_intention():
     sent = request.args.get('sent')
     print("User utterance:", sent)
+    # on local
     intention = train.decode(sent)
+    # on server
+    #intention = train.decode_in_server(sent)
     print("Output:", intention)
 
     return intention[0]
-
 
 
 if __name__ == '__main__':
