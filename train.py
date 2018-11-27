@@ -16,7 +16,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import SGDClassifier
 from eunjeon import Mecab
 from sklearn import metrics
-#import MeCab
+import MeCab
 
 
 def make_vocab(corpus_path, save_path):
@@ -181,7 +181,9 @@ def decode_in_server(sentence):
         tags = mecab.parseToNode(sent)
         while tags:
             #output = '%s/%s' % (tags.surface, tags.feature.split(',')[0])
-            result.append(tags.surface)
+            if tags.surface:
+                result.append(tags.surface)
+
             tags = tags.next
 
         return result
@@ -299,7 +301,7 @@ if __name__ == '__main__':
     #train()
 
     # on local
-    decode("시동켜주세요")
+    #decode("시동켜주세요")
 
     # on server
-    #decode_in_server("시동켜주세요")
+    decode_in_server("시동켜주세요")

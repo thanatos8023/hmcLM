@@ -12,9 +12,9 @@ def get_intention():
     sent = request.args.get('sent')
     print("User utterance:", sent)
     # on local
-    intention = train.decode(sent)
+    #intention = train.decode(sent)
     # on server
-    #intention = train.decode_in_server(sent)
+    intention = train.decode_in_server(sent)
     print("Output:", intention)
 
     return intention[0]
