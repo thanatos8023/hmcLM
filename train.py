@@ -16,11 +16,11 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import SGDClassifier
 from eunjeon import Mecab
 from sklearn import metrics
-import MeCab
+import mecab
 
 
 def make_vocab(corpus_path, save_path):
-    mecab = Mecab()
+    meCab = mecab.MeCab()
     fl = glob.glob(corpus_path+"/*.txt")
 
     all_morphs = []
@@ -30,7 +30,7 @@ def make_vocab(corpus_path, save_path):
         with open(fn, 'r', encoding='utf-8') as f:
             raw = f.readlines()
         for s in raw:
-            morphs = mecab.morphs(s)
+            morphs = meCab.morphs(s)
             for m in morphs:
                 all_morphs.append(m)
 
@@ -109,7 +109,7 @@ def make_data(path, testprob):
 def train():
 
     # tokenizer
-    mecab = Mecab()
+    meCab = mecab.MeCab()
 
     train_X, train_y, test_X, test_y = make_data('corpus', testprob=0.1)
     #print(len(train_X), len(train_y))
@@ -121,7 +121,7 @@ def train():
     print('%% Vacabulary size:', len(vocab))
 
     count_vect = CountVectorizer(
-        tokenizer=mecab.morphs,
+        tokenizer=meCab.morphs,
         ngram_range=(1, 3),
         max_features=10000,
         vocabulary=vocab
@@ -175,10 +175,10 @@ def train():
 def decode_in_server(sentence):
     # define tokenizer
     def tokenizer(sent):
-        mecab = MeCab.Tagger('-d /usr/local/lib/mecab/dic/mecab-ko-dic')
+        meCab = mecab.MeCab()
         result = []
 
-        tags = mecab.parseToNode(sent)
+        tags = meCab.parseToNode(sent)
         while tags:
             #output = '%s/%s' % (tags.surface, tags.feature.split(',')[0])
             if tags.surface:
@@ -241,7 +241,7 @@ def decode_in_server(sentence):
 
 def decode(sentence):
     # tokenizer
-    mecab = Mecab()
+    meCab = mecab.MeCab()
 
     print('--- Get vocabulary')
     try:
@@ -251,27 +251,32 @@ def decode(sentence):
         print('Loading vocabulary ERROR. There is no vocabulary.')
         return None
 
-    print('--- Load vocabulary successfully')
+    print('--- Load vocabulary successfully: vocab.pickle')
     print('%% Vocabulary size:', len(vocab))
+    print(vocab)
+    print()
 
     try:
         with open('model/hmc.model', 'rb') as f:
             model = pickle.load(f)
-            print("--- Loading model Successfully")
+            print("--- Loading model Successfully: model/hmc.model")
     except FileNotFoundError:
         print("Loading model Failed. There is no model.")
         return None
 
+    print(model)
+    print()
+
     #count_vect = pickle.load(open('model/count.pickle', 'rb'))
 
     count_vect = CountVectorizer(
-        tokenizer=mecab.morphs,
+        tokenizer=meCab.morphs,
         ngram_range=(1, 3),
         max_features=10000,
         vocabulary=vocab)
 
     tfidf_vect = TfidfVectorizer(
-        tokenizer=mecab.morphs,
+        tokenizer=meCab.morphs,
         ngram_range=(1, 3),
         max_features=10000,
         vocabulary=vocab
@@ -279,7 +284,6 @@ def decode(sentence):
 
     # vectorize
     sent_counts = count_vect.transform([sentence])
-    #print(sent_counts.shape)
 
     tfidf_transformer = TfidfTransformer(
         use_idf=False,
@@ -301,7 +305,7 @@ if __name__ == '__main__':
     #train()
 
     # on local
-    #decode("시동켜주세요")
+    decode("시동켜주세요")
 
     # on server
-    decode_in_server("시동켜주세요")
+    #decode_in_server("시동켜주세요")
